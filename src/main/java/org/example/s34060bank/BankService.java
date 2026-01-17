@@ -13,6 +13,10 @@ public class BankService {
     }
 
     public void zarejestrujKlienta(int id, int saldo) {
+        if (znajdzKlienta(id) != null) {
+            System.out.println("nie mozna o tym samy idclienta");
+            return;
+        }
         klientStorage.addKlient(new Klient(id, saldo));
     }
     public Klient znajdzKlienta(int id) {
