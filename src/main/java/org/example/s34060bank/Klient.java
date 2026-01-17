@@ -13,5 +13,16 @@ public class Klient {
     public void setSaldo(int saldo) {
         this.saldo = saldo;
     }
-    public int
+
+    public int getClientid() {
+        return clientid;
+    }
+
+    @Override
+    public String toString() {
+        return "Klient{" +
+                "id=" + clientid +
+                ", saldo=" + saldo +
+                '}';
+    }
 }
