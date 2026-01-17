@@ -52,7 +52,11 @@ public class BankServiceIntegrationTest {
 //        when(transakcjaStorage.getTransakcje()).thenReturn(new ArrayList<>());
 //        bankService.wykonajPrzelew(1, 200);
 //    }
-
+    @Test
+    void czyDaSieBezRejestracji(){
+        bankService.wykonajPrzelew(1, 200);
+        assertEquals(bankService.znajdzKlienta(1) == null, true);
+    }
 
 
 }
