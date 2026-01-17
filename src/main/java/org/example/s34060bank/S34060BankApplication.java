@@ -13,6 +13,12 @@ public class S34060BankApplication {
         this.transakcjaStorage = transakcjaStorage;
         this.bankService = bankService;
 
+        bankService.zarejestrujKlienta(1, 100);
+        bankService.zarejestrujKlienta(2, 200);
+        bankService.wykonajPrzelew(1,200);
+        bankService.wykonajPrzelew(2,100);
+        System.out.println(klientStorage.getKlienci());
+
 
 }
     public static void main(String[] args) {

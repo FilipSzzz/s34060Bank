@@ -8,6 +8,7 @@ public class Klient {
         this.saldo = saldo;
     }
     public int getSaldo() {
+
         return saldo;
     }
     public void setSaldo(int saldo) {

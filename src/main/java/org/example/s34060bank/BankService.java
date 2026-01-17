@@ -43,11 +43,12 @@ public class BankService {
         if (nadawca.getSaldo() < kwota) {
             transakcjaStorage.addTransakcja(new Transakcja(Status.DECLINED, kwota, id));
             System.out.println("Za malo salda by wykonac przelew");
-            return Status.DECLINED;
+            return Status.ZAMALOPIENIEDZY;
         }
         nadawca.setSaldo(nadawca.getSaldo() - kwota);
         transakcjaStorage.addTransakcja(new Transakcja(Status.ACCEPTED, kwota, id));
         return Status.ACCEPTED;
     }
+
 
 }

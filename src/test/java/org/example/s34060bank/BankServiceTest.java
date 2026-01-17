@@ -53,5 +53,11 @@ public class BankServiceTest {
         bankService.wykonajPrzelew(1, 50);
         assertEquals(50, bankService.znajdzKlienta(1).getSaldo());
     }
+    @Test
+    void czyNieDaSieWplacicJakNieMaszKonta(){
+        bankService.wplac(1, 50);
+        assertNull( bankService.znajdzKlienta(1));
+    }
+
 
 }
