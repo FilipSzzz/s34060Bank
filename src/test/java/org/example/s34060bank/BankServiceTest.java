@@ -16,10 +16,6 @@ public class BankServiceTest {
         this.bankService = new BankService(klientStorage, transakcjaStorage);
     }
     @Test
-    void shoudlReturnFalseIfFalse(){
-        System.out.println(bankService.znajdzKlienta(1).getSaldo());
-    }
-    @Test
     void depositMoney(){
         bankService.zarejestrujKlienta(1, 100);
         bankService.wplac(1, 50);
@@ -45,6 +41,11 @@ public class BankServiceTest {
     @Test
     void czyNieZnalezionoKlienta(){
         assertEquals(Status.NIE_ZNALEZIONO_CLIENTA, bankService.wykonajPrzelew(1, 100));
+    }
+    @Test
+    void czyNieDodanoDoBazyGdyzNieZarejestrowano(){
+        bankService.wykonajPrzelew(1, 100);
+        assertEquals(0, klientStorage.getKlienci().size());
     }
     @Test
     void przelew(){
